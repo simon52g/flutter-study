@@ -24,17 +24,24 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-      title: Text('First app'),
-      ),  
+      title: Text('BBANTO'),
+      centerTitle: true,
+      backgroundColor: Colors.redAccent,
+      elevation: 0.0,
+   
+      ),
       body: Center(
         child: Column(
-          children: [
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
             Text('Hello'),
             Text('Hello'),
             Text('Hello'),
-          ],
-        ),
+            ]
+            
+          ),
       ),
+
     );
   }
 }
