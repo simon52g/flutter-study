@@ -8,8 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Snack Bar',
-      theme: ThemeData(primarySwatch: Colors.red),
+      title: 'Myapp',
+      theme: ThemeData(primaryColor: Colors.blue),
       home: Mypage(),
     );
   }
@@ -21,25 +21,15 @@ class Mypage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Snack Bar'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red, // Background color
-          ),
-          child: Text(
-            'Show me',
-            style: TextStyle(color: Colors.white),
-          ),
-          // color: Colors.red,
-          onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text('Hellow'),
-            ));
-          },
+      backgroundColor: Colors.blue,
+      body: SafeArea(
+        child: Container(
+          color: Colors.red,
+          width: 100,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+          padding: EdgeInsets.all(20),
+          child: Text('Hello'),
         ),
       ),
     );
