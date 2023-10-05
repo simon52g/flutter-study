@@ -21,15 +21,31 @@ class Mypage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.teal,
       body: SafeArea(
-        child: Container(
-          color: Colors.red,
-          width: 100,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
-          padding: EdgeInsets.all(20),
-          child: Text('Hello'),
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.white,
+                child: Text('C1'),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+                child: Text('C2'),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: Text('C3'),
+              ),
+            ],
+          ),
         ),
       ),
     );
