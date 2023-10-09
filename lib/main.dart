@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -10,42 +12,51 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Myapp',
       theme: ThemeData(primaryColor: Colors.blue),
-      home: Mypage(),
+      home: FirstPage(),
     );
   }
 }
 
-class Mypage extends StatelessWidget {
-  const Mypage({super.key});
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context2) {
     return Scaffold(
-      backgroundColor: Colors.teal,
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.white,
-                child: Text('C1'),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: Text('C2'),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Text('C3'),
-              ),
-            ],
-          ),
+      appBar: AppBar(
+        title: Text('Fist page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Go to the Second page'),
+          onPressed: () { 
+            Navigator.push(
+              context2, MaterialPageRoute(
+                builder: (context) =>SecondPage()
+                ));
+          },
+        ),
+      ),
+    );
+  }
+}
+
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
+  @override
+  Widget build(BuildContext ctx) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Go to the First page'),
+          onPressed: () {
+            Navigator.pop(ctx);
+           },
         ),
       ),
     );
