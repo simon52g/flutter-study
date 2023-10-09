@@ -1,6 +1,7 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/ScreenB.dart';
+import 'package:flutter_application_1/ScreenC.dart';
+import 'ScreenA.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,55 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Myapp',
-      theme: ThemeData(primaryColor: Colors.blue),
-      home: FirstPage(),
-    );
-  }
-}
-
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
-
-  @override
-  Widget build(BuildContext context2) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Fist page'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Go to the Second page'),
-          onPressed: () { 
-            Navigator.push(
-              context2, MaterialPageRoute(
-                builder: (context) =>SecondPage()
-                ));
-          },
-        ),
-      ),
-    );
-  }
-}
-
-
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-
-  @override
-  Widget build(BuildContext ctx) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Second page'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Go to the First page'),
-          onPressed: () {
-            Navigator.pop(ctx);
-           },
-        ),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/' :(context) => ScreenA(),
+        '/b' :(context) => ScreenB(),
+        '/c' :(context) => ScreenC()
+      },
     );
   }
 }
